@@ -75,8 +75,8 @@ public class Program
 
                                                 string name = "";
                                                 ProductType check = ProductType.Else;
-
                                                 product = new Product();
+                                                Product.Numberofcreated--;
                                                 do
                                                 {
                                                     try
@@ -139,6 +139,7 @@ public class Program
                                                 string date = "";
                                                 int amount = 0;
                                                 product = new Product();
+                                                Product.Numberofcreated--;
                                                 do
                                                 {
                                                     try
@@ -309,6 +310,11 @@ public class Program
                                 Demonstration2(products);
                                 break;
                             case 7:
+                                if (products.Count == 0)
+                                {
+                                    Console.WriteLine("You have no products in the list");
+                                    break ;
+                                }
                                 Console.WriteLine("1 - Save into .csv");
                                 Console.WriteLine("2 - Save into .json");
                                 try
@@ -416,6 +422,7 @@ public class Program
                             case 9:
                                 products.Clear();
                                 Product.Numberofcreated = 0;
+                                Console.WriteLine("Collection cleared");
                                 break;
                             case 0:
                                 CheckTheException = true;
@@ -580,7 +587,11 @@ public class Program
         {
             bool CheckTheException = false;
             List<Product> result = new List<Product>();
-
+            if (products.Count == 0)
+            {
+                Console.WriteLine("You have no products in the list");
+                return;            
+            }
             do
             {
                 try
@@ -594,6 +605,9 @@ public class Program
                             {
                                 try
                                 {
+                                    if (products.Count == 0) {
+                                        throw new Exception("You have no products in the list");
+                                    }
                                     int choose = 0;
                                     Console.WriteLine("1-Buy product. 2-Delivery product");
                                     choose = int.Parse(Console.ReadLine());
