@@ -5,6 +5,10 @@ VisualStudioVersion = 17.12.35506.116 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab7_Petrykin_programm", "Lab7_Petrykin_programm\Lab7_Petrykin_programm.csproj", "{A809F565-9974-4EFE-9621-2F486DA5A395}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductTesting", "ProductTesting\ProductTesting.csproj", "{9D02EF8F-AF50-48B2-9456-458780AE67B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammTesting", "ProgrammTesting\ProgrammTesting.csproj", "{674939ED-CEB5-4616-AF61-57DAD80142C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A809F565-9974-4EFE-9621-2F486DA5A395}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A809F565-9974-4EFE-9621-2F486DA5A395}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A809F565-9974-4EFE-9621-2F486DA5A395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D02EF8F-AF50-48B2-9456-458780AE67B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D02EF8F-AF50-48B2-9456-458780AE67B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D02EF8F-AF50-48B2-9456-458780AE67B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D02EF8F-AF50-48B2-9456-458780AE67B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674939ED-CEB5-4616-AF61-57DAD80142C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674939ED-CEB5-4616-AF61-57DAD80142C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674939ED-CEB5-4616-AF61-57DAD80142C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674939ED-CEB5-4616-AF61-57DAD80142C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
