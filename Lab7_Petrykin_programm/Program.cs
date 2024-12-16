@@ -388,7 +388,7 @@ public class Program
 
                                                 if (!System.String.IsNullOrEmpty(s))
                                                 {
-                                                    List<Product> read_account = ReadFromFileJson(s); 
+                                                    List<Product> read_account = ReadFromFileJson(s);
                                                     Console.WriteLine("Account Objects:\n");
                                                     if (read_account != null)
                                                     {
@@ -401,22 +401,24 @@ public class Program
                                                                 {
                                                                     Console.WriteLine(product.ToString());
                                                                     products.Add(prod);
+                                                                    Product.Numberofcreated--;
                                                                 }
+                                                                else
+                                                                {
+                                                                    break;
+                                                                }
+
                                                             }
                                                             catch (FormatException)
                                                             {
                                                                 Console.WriteLine("Wrong format");
-                                                                continue;
                                                             }
                                                             catch (Exception e)
                                                             {
                                                                 Console.WriteLine(e.Message);
-                                                                continue;
                                                             }
                                                         }
                                                     }
-                                                    else
-                                                        Console.WriteLine("Error by reading JSON file");
                                                 }
                                                 //C:\УЧЕБА ДЗ\DZ\Lab DZ\2 курс\ООП\Lab_7\testjson.json
                                                 CheckTheException = true;
@@ -564,12 +566,7 @@ public class Program
         {
             try
             {
-                string jsonstring = "";
-                foreach (Product p in products)
-                {
-                    jsonstring += JsonConvert.SerializeObject(p);
-                    jsonstring += "\n";
-                }
+                string jsonstring = JsonConvert.SerializeObject(products);
                 File.WriteAllText(path, jsonstring);
                 Console.WriteLine($"Check out the JSON file here: {Path.GetFullPath(path)}");
             }
