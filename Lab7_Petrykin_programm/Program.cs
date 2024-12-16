@@ -11,6 +11,7 @@ using System.Threading.Channels;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Xml;
 public class Program
 {
     public static void Main()
@@ -387,14 +388,31 @@ public class Program
 
                                                 if (!System.String.IsNullOrEmpty(s))
                                                 {
-                                                    List<Product> read_account = ReadFromFileJson(s);
+                                                    List<Product> read_account = ReadFromFileJson(s); 
                                                     Console.WriteLine("Account Objects:\n");
                                                     if (read_account != null)
                                                     {
-                                                        foreach (Product product in read_account)
+                                                        foreach (object product in read_account)
                                                         {
-                                                            Console.WriteLine(product.ToString());
-                                                            products.Add(product);
+                                                            try
+                                                            {
+                                                                string p = product.ToString();
+                                                                if (Product.TryParse(p, out Product prod))
+                                                                {
+                                                                    Console.WriteLine(product.ToString());
+                                                                    products.Add(prod);
+                                                                }
+                                                            }
+                                                            catch (FormatException)
+                                                            {
+                                                                Console.WriteLine("Wrong format");
+                                                                continue;
+                                                            }
+                                                            catch (Exception e)
+                                                            {
+                                                                Console.WriteLine(e.Message);
+                                                                continue;
+                                                            }
                                                         }
                                                     }
                                                     else

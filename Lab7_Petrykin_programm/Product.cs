@@ -254,7 +254,7 @@ namespace Lab7_Petrykin_programm
         }
         public override string ToString()
         {
-            return $"{Name};{Type};{Cost};{NumberOf};{Date}";
+            return $"{Name};{(int)Type};{Cost};{NumberOf};{Date}";
         }
 
         static public bool DateCheck(string date)
@@ -306,7 +306,7 @@ namespace Lab7_Petrykin_programm
             }
             string[] words = s.Split(';', StringSplitOptions.RemoveEmptyEntries);
             if (words.Length != 5) { throw new Exception("Wrong number of parameters"); }
-            if (!int.TryParse(words[1], out int type))
+            if (!int.TryParse(words[1], out int type) || !ProductType.TryParse(words[1], out ProductType type11))
             {
                 throw new Exception($"Wrong type format!({words[1]})");
             }
